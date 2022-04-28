@@ -1,4 +1,6 @@
 
+import 'package:battleships_client/Model/GameRoom.dart';
+import 'package:battleships_client/Services/SessionService.dart';
 import 'package:battleships_client/View/MainMenuView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,8 @@ class CreateGameViewModel{
   void create_OnClick(String roomName) async {
     var success = await Api.createRoom(roomName);
     if (success) {
+      var player = SessionService.player;
+      SessionService.player!.currentGame = GameRoom(roomName, player, null);
       Navigator.pushNamed(context, '/lobby');
     }
   }

@@ -4,12 +4,15 @@ part 'Player.g.dart';
 @JsonSerializable()
 class Player {
   String? connectionId;
-  String? displayName;
+  String displayName;
   GameRoom? currentGame;
 
-  Player({this.connectionId, this.displayName, this.currentGame});
+  Player(this.displayName, this.connectionId, this.currentGame);
+
 
   static fromJson(Map<String, dynamic> json) => _$PlayerFromJson(json);
+
+
 
 
 }

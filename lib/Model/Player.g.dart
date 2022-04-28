@@ -7,9 +7,9 @@ part of 'Player.dart';
 // **************************************************************************
 
 Player _$PlayerFromJson(Map<String, dynamic> json) => Player(
-      connectionId: json['connectionId'] as String?,
-      displayName: json['displayName'] as String?,
-      currentGame: json['currentGame'] == null
+      json['displayName'] as String,
+      json['connectionId'] as String?,
+      json['currentGame'] == null
           ? null
           : GameRoom.fromJson(json['currentGame'] as Map<String, dynamic>),
     );

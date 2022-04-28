@@ -20,10 +20,10 @@ class LobbyView extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 PlayerCardWidget(
-                    playerName: "1",
+                    playerName: vm.player!.displayName
                   ),
                 PlayerCardWidget(
-                  playerName: "2",
+                  playerName: vm.opponent?.displayName ?? "Waiting for player 2",
                 ),
               ],
             )

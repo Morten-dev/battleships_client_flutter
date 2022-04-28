@@ -7,7 +7,7 @@ class GameRoom {
   String? gameID = "";
   Player? playerOne;
   Player? playerTwo;
-  int? players = 1;
+  int players = 1;
 
   GameRoom(this.gameID, this.playerOne, this.playerTwo){
     if(playerTwo != null){
